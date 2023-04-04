@@ -14,7 +14,7 @@ import javax.jms.TextMessage;
 
 public class Consumer implements Runnable, ExceptionListener {
 
-    private ConnectionPool connectionPool;
+    private final ConnectionPool connectionPool;
 
     public Consumer() throws ConnectionPoolException {
         connectionPool = ConnectionPool.getInstance();
@@ -35,12 +35,10 @@ public class Consumer implements Runnable, ExceptionListener {
             while (true) {
                 TextMessage receivedMessage = (TextMessage) consumer.receive();
                 String text = receivedMessage.getText();
-
                 if (text == null || text.isEmpty()) {
                     break;
                 }
-
-                System.out.println("Received message: " + text);
+                System.out.println(String.format("Received message (%s): ", Thread.currentThread().getName()) + text);
             }
 
             consumer.close();

@@ -6,10 +6,17 @@ import com.message.brockers.pool.exception.ConnectionPoolException;
 public class ConsumerMain {
 
     public static void main(String[] args) throws ConnectionPoolException, InterruptedException {
-        Consumer consumer = new Consumer();
-        Thread thread = new Thread(consumer);
+        Consumer firstConsumer = new Consumer();
+        Consumer secondConsumer = new Consumer();
+        Thread firstThread = new Thread(firstConsumer);
+        firstThread.setName("firstThread");
+        Thread secondThread = new Thread(secondConsumer);
+        secondThread.setName("secondThread");
 
-        thread.start();
-        thread.join();
+        firstThread.start();
+        secondThread.start();
+
+        secondThread.join();
+        firstThread.join();
     }
 }

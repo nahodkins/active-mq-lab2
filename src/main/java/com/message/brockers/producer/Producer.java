@@ -13,7 +13,7 @@ import javax.jms.Session;
 
 public class Producer implements Runnable {
 
-    private ConnectionPool connectionPool;
+    private final ConnectionPool connectionPool;
 
     public Producer() throws ConnectionPoolException {
         connectionPool = ConnectionPool.getInstance();
