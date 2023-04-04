@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ConnectionPool {
 
-    private static final String BROKER_URL = "tcp://localhost:61616";
+    private static final String BROKER_URL = "tcp://host.docker.internal:61616";
     private static final int POOL_SIZE = 20;
 
     private static ConnectionPool instance;
