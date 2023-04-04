@@ -28,7 +28,5 @@ public class ConsumerProducerMain {
             }
             default -> throw new IllegalArgumentException("Wrong arguments passed");
         }
-        System.out.println();
-        System.out.println();
     }
 }
