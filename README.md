@@ -1,6 +1,6 @@
-#ActiveMQ Lab 2 with docker support
+# ActiveMQ Lab 2 with docker support
 ***
-##Prerequisites
+## Prerequisites
 To run application you should have already launched instance of ActiveMQ on your local machine. You can use symptoma/activemq
 image to run ActiveMQ in the separate docker container.
 
@@ -23,7 +23,7 @@ symptoma/activemq:latest
 ````
 To verify that ActiveMQ server was launched successfully you can go to `localhost:8161`. If everything is ok, you'll see the home page of ActiveMQ.
 ***
-##Running `active-mq-lab2` in the docker container
+## Running `active-mq-lab2` in the docker container
 First you have to build the docker image. To do this use the next command:
 ````
 docker build -t active-mq-lab2:v1 .
